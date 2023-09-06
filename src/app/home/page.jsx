@@ -19,11 +19,17 @@ const page = () => {
           {/* Tweet Box */}
           <div className="w-[90%]">
             {/* Privacy for tweet */}
-            <div className="p-1 w-fit text-blue-600 flex gap-x-1 border-3 rounded-md">
-              Everyone
-              
-                <FaAngleDown className="mt-1" />
-              
+            <div className="p-1 w-fit text-blue-600 flex gap-x-1 ">
+              <select
+                name=""
+                id=""
+                className="border-2 rounded-lg outline-none"
+              >
+                <option value="Everyone">
+                  Everyone <FaAngleDown />
+                </option>
+                <option value="Circle">Circle</option>
+              </select>
             </div>
           </div>
         </div>

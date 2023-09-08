@@ -67,7 +67,7 @@ const LeftSidebar = () => {
     setIsLogOutOpened(!isLogOutOpened);
   };
   return (
-    <div className="w-15 sm:w-[25%] overflow-y-scroll ">
+    <div className="w-15 h-[100vh]  sm:w-[25%] fixed overflow-y-scroll">
       <div className="logo">
         {/* Large screen logos */}
         <Link href={"/home"} className="hidden sm:block">

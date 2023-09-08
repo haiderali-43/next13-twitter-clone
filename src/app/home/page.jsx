@@ -14,7 +14,7 @@ const Page = () => {
   };
 
   return (
-    <div className="w-[50%]">
+    <div className="w-[50%] m-auto border-r-2 border-black">
       <div className="p-3">
         <h2 className="text-[18px] font-extralight">Home</h2>
       </div>

@@ -3,20 +3,14 @@ import React, { useState } from "react";
 import { FaAngleDown, FaPoll } from "react-icons/fa";
 import { AiOutlinePicture } from "react-icons/ai";
 import { GrLocation } from "react-icons/gr";
+import Feed from "@/components/Feed";
 
 const Page = () => {
   const [tweet, setTweet] = useState("");
 
   const handleTweetChange = (e) => {
     const inputText = e.target.value;
-    if (inputText.length >= 280) {
-      setTweet(inputText);
-      
-    }
-  };
-
-  const handleTweetSubmit = () => {
-    console.log();
+    setTweet(inputText);
   };
 
   return (
@@ -37,13 +31,9 @@ const Page = () => {
           <div className="w-[90%]">
             {/* Privacy for tweet */}
             <div className="p-1 w-fit text-blue-600  gap-x-1 ">
-              <select
-                name=""
-                id=""
-                className="border-2 rounded-lg outline-none"
-              >
+              <select className="border-2 rounded-lg outline-none">
                 <option value="Everyone">
-                  Everyone <FaAngleDown key="angle-down" />
+                  Everyone <FaAngleDown />
                 </option>
                 <option value="Circle">Circle</option>
               </select>
@@ -56,21 +46,22 @@ const Page = () => {
                 onChange={handleTweetChange}
                 rows={5}
                 className="w-full p-2 outline-none resize-none border-b"
+                maxLength={280}
               />
             </div>
             {/* Input for tweet box end */}
             {/* tweet button */}
             <div className="flex justify-between items-center">
               <div className="flex gap-x-[3rem] text-[18px]">
-                <AiOutlinePicture key="picture" />
-                <FaPoll key="poll" />
-                <GrLocation key="location" />
+                <AiOutlinePicture />
+                <FaPoll />
+                <GrLocation />
               </div>
-              
+
               <div className="mr-9">
                 <button
                   className="border px-4 py-2 bg-blue-700 rounded-[900px] text-white"
-                  onClick={handleTweetSubmit}
+                  onClick={() => console.log(tweet)}
                 >
                   Post
                 </button>
@@ -81,6 +72,7 @@ const Page = () => {
         </div>
       </div>
       {/* Tweet box end */}
+      <Feed />
     </div>
   );
 };

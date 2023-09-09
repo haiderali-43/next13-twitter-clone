@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { FaAngleDown, FaPoll } from "react-icons/fa";
+import { FaPoll } from "react-icons/fa";
 import { AiOutlinePicture } from "react-icons/ai";
 import { GrLocation } from "react-icons/gr";
 import Feed from "@/components/Feed";
@@ -14,7 +14,7 @@ const Page = () => {
   };
 
   return (
-    <div className="w-[50%] m-auto border-r-2 border-black">
+    <div className="sm:w-[50%] w-[80%] absolute right-0 sm:relative  sm:m-auto border-r-2 border-black">
       <div className="p-3">
         <h2 className="text-[18px] font-extralight">Home</h2>
       </div>
@@ -28,16 +28,7 @@ const Page = () => {
             </div>
           </div>
           {/* Tweet Box */}
-          <div className="w-[90%]">
-            {/* Privacy for tweet */}
-            <div className="p-1 w-fit text-blue-600  gap-x-1 ">
-              <select className="border-2 rounded-lg outline-none">
-                <option value="Everyone">
-                  Everyone <FaAngleDown />
-                </option>
-                <option value="Circle">Circle</option>
-              </select>
-            </div>
+          <div className="w-[90%] ml-2 sm:ml-0">
             {/* Input for tweet box */}
             <div>
               <textarea
@@ -61,7 +52,7 @@ const Page = () => {
               <div className="mr-9">
                 <button
                   className="border px-4 py-2 bg-blue-700 rounded-[900px] text-white"
-                  onClick={() => console.log(tweet)}
+                  onClick={() => console.log(tweet)} 
                 >
                   Post
                 </button>

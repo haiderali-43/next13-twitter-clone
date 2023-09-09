@@ -17,17 +17,17 @@ const Feed = () => {
             </div>
           </div>
           {/* Name and username */}
-          <div className="flex gap-x-[8px] mt-[6px] w-[90%]">
+          <div className="flex gap-x-[8px] mt-[6px] w-[90%] ml-6 sm:ml-0">
             <h2 className="text-[16px] font-extrabold">Haider Ali</h2>
             <h5 className="font-extralight">@haiderali</h5>
-            <div className="ml-[24rem] mt-1 text-[18px]">
+            <div className="sm:ml-[24rem] mt-1 text-[18px] ml-[7rem]">
               <BsThreeDots />
             </div>
           </div>
         </div>
         {/* Tweet Text */}
         <div className="w-[90%] float-right">
-          <p className="w-[85%] overflow-x-hidden">
+          <p className="w-full overflow-x-hidden">
             qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq <br />{" "}
             qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq <br />{" "}
             qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq <br />

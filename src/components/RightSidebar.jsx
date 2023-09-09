@@ -3,7 +3,7 @@ import { BsSearch } from "react-icons/bs";
 
 const RightSidebar = () => {
   return (
-    <section className="w-[25%] fixed hidden md:block top-2 right-0  p-2">
+    <section className="w-[25%] fixed hidden lg:block top-2 right-0  p-2">
       <div>
         <div className="relative w-full h-full group">
           <input

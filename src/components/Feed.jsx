@@ -20,7 +20,7 @@ const Feed = () => {
           <div className="flex gap-x-[8px] mt-[6px] w-[90%] ml-6 sm:ml-0">
             <h2 className="text-[16px] font-extrabold">Haider Ali</h2>
             <h5 className="font-extralight">@haiderali</h5>
-            <div className="sm:ml-[24rem] mt-1 text-[18px] ml-[7rem]">
+            <div className=" text-[18px] absolute right-4">
               <BsThreeDots />
             </div>
           </div>

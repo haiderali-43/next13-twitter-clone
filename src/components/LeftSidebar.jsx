@@ -67,7 +67,7 @@ const LeftSidebar = () => {
     setIsLogOutOpened(!isLogOutOpened);
   };
   return (
-    <div className="w-15 h-[100vh]  sm:w-[25%] fixed overflow-y-scroll">
+    <div className="w-15 h-[100vh]  md:w-[25%] fixed overflow-y-scroll">
       <div className="logo">
         {/* Large screen logos */}
         <Link href={"/home"} className="hidden sm:block">
@@ -90,7 +90,7 @@ const LeftSidebar = () => {
                   className="flex gap-x-4 mt-4 px-4 py-2 rounded-[999px]  hover:bg-[#e7e7e8] sm:ml-8 ml-2 items-center w-fit transition duration-300"
                 >
                   <div className="text-[26px]">{item.icon}</div>
-                  <div className="text-[18px] hidden md:block font-light">
+                  <div className="text-[18px] hidden lg:block font-light">
                     {item.title}
                   </div>
                 </Link>
@@ -101,7 +101,7 @@ const LeftSidebar = () => {
                 className="flex gap-x-4 mt-4 px-4 py-2 hover:bg-[#e7e7e8] items-center w-fit rounded-[999px] transition-colors duration-300 sm:ml-8 ml-2 "
               >
                 <div className="text-[26px]">{item.icon}</div>
-                <div className="text-[18px] hidden md:block font-light">
+                <div className="text-[18px] hidden lg:block font-light">
                   {item.title}
                 </div>
               </div>
@@ -118,12 +118,12 @@ const LeftSidebar = () => {
             H
           </div>
           {/* Name & username */}
-          <div className="hidden sm:block">
+          <div className="hidden lg:block">
             <div className="font-extrabold">Hassan Hussaian</div>
             <div className="font-light text-[#6191c4]">@hassanhussaian</div>
           </div>
           {/* three dots */}
-          <div className="hidden sm:block">
+          <div className="hidden lg:block">
             <FiMoreHorizontal />
           </div>
         </div>

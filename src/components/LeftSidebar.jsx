@@ -67,7 +67,7 @@ const LeftSidebar = () => {
     setIsLogOutOpened(!isLogOutOpened);
   };
   return (
-    <div className="w-15 h-[100vh]  md:w-[25%] fixed border-r-2">
+    <div className="w-15 h-[100vh]  md:w-[25%] fixed border-r-2 overflow-y-auto ">
       <div className="logo">
         {/* Large screen logos */}
         <Link href={"/home"} className="hidden sm:block">
@@ -110,7 +110,7 @@ const LeftSidebar = () => {
         </div>
         {/* profile information */}
         <div
-          className="flex mt-5 sm:ml-8 ml-2 gap-x-4 items-center w-fit hover:bg-[#e7e7e8] transition-colors duration-100 rounded-[999px] p-2 cursor-pointer absolute bottom-0"
+          className="flex mt-[8rem] sm:ml-8 ml-2 gap-x-4 items-center w-fit hover:bg-[#e7e7e8] transition-colors duration-100 rounded-[999px] p-2 cursor-pointer  "
           onClick={handleLogoutBox}
         >
           {/* profile logo */}

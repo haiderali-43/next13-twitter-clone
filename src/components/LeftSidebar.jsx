@@ -110,7 +110,7 @@ const LeftSidebar = () => {
         </div>
         {/* profile information */}
         <div
-          className="flex mt-[8rem] sm:ml-8 ml-2 gap-x-4 items-center w-fit hover:bg-[#e7e7e8] transition-colors duration-100 rounded-[999px] p-2 cursor-pointer  "
+          className="flex mt-[6rem] sm:ml-8 ml-2 gap-x-4 items-center w-fit hover:bg-[#e7e7e8] transition-colors duration-100 rounded-[999px] p-2 cursor-pointer  "
           onClick={handleLogoutBox}
         >
           {/* profile logo */}

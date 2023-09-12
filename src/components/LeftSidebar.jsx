@@ -7,14 +7,12 @@ import {
   AiOutlineSearch,
   AiOutlineBell,
   AiOutlineMail,
-  AiOutlineTwitter,
   AiOutlineUser,
-  AiOutlineUsergroupAdd,
 } from "react-icons/ai";
 import { CiCircleMore } from "react-icons/ci";
 import { FiMoreHorizontal } from "react-icons/fi";
 import LogOutbox from "./LogOutbox";
-import { DisplayName, ProfilePhoto } from "@/UserInformation/DisplayName";
+import { DisplayName, } from "@/UserInformation/DisplayName";
 
 
 const LeftSidebar = () => {
@@ -40,29 +38,11 @@ const LeftSidebar = () => {
       path: "/messages",
     },
     {
-      title: "Lists",
-      icon: <AiOutlineSearch />,
-      path: "/lists",
-    },
-    {
-      title: "Communities",
-      icon: <AiOutlineUsergroupAdd />,
-      path: "/communities",
-    },
-    {
-      title: "Verified",
-      icon: <AiOutlineTwitter />,
-      path: "/verified",
-    },
-    {
       title: "Profile",
       icon: <AiOutlineUser />,
       path: "/profile",
     },
-    {
-      title: "More",
-      icon: <CiCircleMore />,
-    },
+
   ];
   const [isLogOutOpened, setIsLogOutOpened] = useState(false);
   const handleLogoutBox = () => {
@@ -112,7 +92,7 @@ const LeftSidebar = () => {
         </div>
         {/* profile information */}
         <div
-          className="flex mt-[6rem] sm:ml-8 ml-2 gap-x-4 items-center w-fit hover:bg-[#e7e7e8] transition-colors duration-100 rounded-[999px] p-2 cursor-pointer  "
+          className="flex absolute bottom-0 sm:ml-8 ml-2 gap-x-4 items-center w-fit hover:bg-[#e7e7e8] transition-colors duration-100 rounded-[999px] p-2 cursor-pointer  "
           onClick={handleLogoutBox}
         >
           {/* profile logo */}

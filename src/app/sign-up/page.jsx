@@ -5,8 +5,7 @@ import { auth } from "../../../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { database } from "../../../firebaseConfig";
-import {useCollection} from 'react-firebase-hooks/database'
+import { db } from "../../../firebaseConfig";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -17,18 +16,35 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-        router.push("/");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      console.log(user);
+      router.push("/");
+
+      // Save user information in Firestore
+      const userData = {
+        name: name,
+        email: email,
+        username: userName,
+        password: password, // Use the correct variable name
+        // Do not store passwords in Firestore for security reasons.
+        // You should only store a hashed or encrypted version of the password if needed.
+      };
+
+      const docRef = await db.collection("users").add(userData);
+      console.log("User data added with id:", docRef.id);
+    } catch (error) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    }
   };
+
   return (
     <main
       className="md:w-[500px] md:h-[600px] w-[400px] h-[550px] rounded-lg bg-white/75  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] p-3"
@@ -48,7 +64,7 @@ export default function Home() {
             Sign into X
           </h2>
           {/* Sign in with Email and Password */}
-          <form action=""></form>
+          <form action="" method="POST"></form>
           <div className="flex flex-col gap-y-6 mt-9">
             <input
               type="text"

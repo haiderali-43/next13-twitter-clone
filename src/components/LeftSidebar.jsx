@@ -14,6 +14,8 @@ import {
 import { CiCircleMore } from "react-icons/ci";
 import { FiMoreHorizontal } from "react-icons/fi";
 import LogOutbox from "./LogOutbox";
+import { DisplayName, ProfilePhoto } from "@/UserInformation/DisplayName";
+
 
 const LeftSidebar = () => {
   const navData = [
@@ -119,7 +121,7 @@ const LeftSidebar = () => {
           </div>
           {/* Name & username */}
           <div className="hidden lg:block">
-            <div className="font-extrabold">Hassan Hussaian</div>
+            <div className="font-extrabold"><DisplayName/></div>
             <div className="font-light text-[#6191c4]">@hassanhussaian</div>
           </div>
           {/* three dots */}

@@ -6,6 +6,11 @@ import { auth } from "../../firebaseConfig";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
+export const DisplayName = () => {
+  const name = user.DisplayName;
+  console.log(name);
+};
+
 export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

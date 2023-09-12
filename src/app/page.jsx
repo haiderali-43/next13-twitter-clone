@@ -55,11 +55,6 @@ export default function Home() {
               <Image src={"/google.png"} alt="Google" width={32} height={32} />
               <p className="mt-1 font-bold">Continue with Google</p>
             </div>
-            {/* Sign in with Apple */}
-            <div className="flex justify-center w-[70%] m-auto space-x-2 p-2 rounded-[999px] bg-slate-200">
-              <Image src={"/apple.png"} alt="apple" width={32} height={32} />
-              <p className="mt-1 font-bold">Continue with Apple</p>
-            </div>
           </div>
           {/* Sign in with Email and Password */}
           <form action=""></form>

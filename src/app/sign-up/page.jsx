@@ -1,16 +1,19 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { auth } from "../../../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { database } from "../../../firebaseConfig";
+import {useCollection} from 'react-firebase-hooks/database'
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [userName, setUserName] = useState("");
   const router = useRouter();
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,22 +47,23 @@ export default function Home() {
           <h2 className="font-extrabold text-[20px] ml-[5rem] mt-5">
             Sign into X
           </h2>
-          {/* Socail Sign ins */}
-          <div className="space-y-3 mt-[2rem]">
-            {/* Sign in with Google */}
-            <div className="flex justify-center w-[70%] m-auto space-x-2 p-2 rounded-[999px] bg-slate-200">
-              <Image src={"/google.png"} alt="Google" width={32} height={32} />
-              <p className="mt-1 font-bold">Continue with Google</p>
-            </div>
-            {/* Sign in with Apple */}
-            <div className="flex justify-center w-[70%] m-auto space-x-2 p-2 rounded-[999px] bg-slate-200">
-              <Image src={"/apple.png"} alt="apple" width={32} height={32} />
-              <p className="mt-1 font-bold">Continue with Apple</p>
-            </div>
-          </div>
           {/* Sign in with Email and Password */}
           <form action=""></form>
           <div className="flex flex-col gap-y-6 mt-9">
+            <input
+              type="text"
+              placeholder="Name"
+              className="w-[70%] m-auto h-[2rem] px-2 py-6 rounded-lg border-2 focus:outline-none"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Username"
+              className="w-[70%] m-auto h-[2rem] px-2 py-6 rounded-lg border-2 focus:outline-none"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+            />
             <input
               type="email"
               placeholder="Enter your email"

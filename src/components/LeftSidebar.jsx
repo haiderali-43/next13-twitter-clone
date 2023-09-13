@@ -12,8 +12,7 @@ import {
 import { CiCircleMore } from "react-icons/ci";
 import { FiMoreHorizontal } from "react-icons/fi";
 import LogOutbox from "./LogOutbox";
-import { DisplayName, } from "@/UserInformation/DisplayName";
-
+import { DisplayName } from "@/UserInformation/DisplayName";
 
 const LeftSidebar = () => {
   const navData = [
@@ -42,7 +41,6 @@ const LeftSidebar = () => {
       icon: <AiOutlineUser />,
       path: "/profile",
     },
-
   ];
   const [isLogOutOpened, setIsLogOutOpened] = useState(false);
   const handleLogoutBox = () => {
@@ -64,31 +62,19 @@ const LeftSidebar = () => {
           </div>
         </Link>
         <div>
-          {navData.map((item, index) =>
-            item.path ? (
-              <div key={index}>
-                <Link
-                  href={item.path}
-                  className="flex gap-x-4 mt-4 px-4 py-2 rounded-[999px]  hover:bg-[#e7e7e8] sm:ml-8 ml-2 items-center w-fit transition duration-300"
-                >
-                  <div className="text-[26px]">{item.icon}</div>
-                  <div className="text-[18px] hidden lg:block font-light">
-                    {item.title}
-                  </div>
-                </Link>
-              </div>
-            ) : (
-              <div
-                key={index}
-                className="flex gap-x-4 mt-4 px-4 py-2 hover:bg-[#e7e7e8] items-center w-fit rounded-[999px] transition-colors duration-300 sm:ml-8 ml-2 "
+          {navData.map((item, index) => (
+            <div key={index}>
+              <Link
+                href={item.path}
+                className="flex gap-x-4 mt-4 px-4 py-2 rounded-[999px]  hover:bg-[#e7e7e8] sm:ml-8 ml-2 items-center w-fit transition duration-300"
               >
                 <div className="text-[26px]">{item.icon}</div>
                 <div className="text-[18px] hidden lg:block font-light">
                   {item.title}
                 </div>
-              </div>
-            )
-          )}
+              </Link>
+            </div>
+          ))}
         </div>
         {/* profile information */}
         <div
@@ -101,7 +87,9 @@ const LeftSidebar = () => {
           </div>
           {/* Name & username */}
           <div className="hidden lg:block">
-            <div className="font-extrabold"><DisplayName/></div>
+            <div className="font-extrabold">
+              <DisplayName />
+            </div>
             <div className="font-light text-[#6191c4]">@hassanhussaian</div>
           </div>
           {/* three dots */}

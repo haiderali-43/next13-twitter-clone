@@ -1,8 +1,11 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Feed from "@/components/Feed";
+import EditProfile from "@/components/EditProfile";
 
-const page = () => {
+const Page = () => {
+  const [editYourProfile, setEditYourProfile] = useState(false);
   return (
     <div className="sm:w-[50%] w-[80%] absolute right-0 sm:relative  sm:m-auto md:border-r-2  h-[100vh] p-2">
       <div>
@@ -24,9 +27,13 @@ const page = () => {
         H
       </div>
       {/* Edit Profile Button */}
-      <div className="absolute right-[4rem] mt-4 border-2 rounded-[999px] p-2 hover:bg-[#e7e7e8]">
+      <div
+        className="absolute right-[4rem] mt-4 border-2 rounded-[999px] p-2 hover:bg-[#e7e7e8] cursor-pointer transition-all duration-200"
+        onClick={() => setEditYourProfile(!editYourProfile)}
+      >
         <span>Edit Profile</span>
       </div>
+      {editYourProfile && <EditProfile />}
       {/* Name and username */}
       <div className="relative top-[7rem] left-[2rem] space-y-2">
         <div>
@@ -73,4 +80,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

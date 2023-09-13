@@ -66,15 +66,20 @@ export default function Home() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <input
-              type="password"
-              placeholder="Enter your password"
-              className="w-[70%] m-auto h-[2rem] px-2 py-6 rounded-lg border-2 focus:outline-none"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                className="w-[70%] m-auto h-[2rem] px-2 py-6 rounded-lg border-2 focus:outline-none"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                id="user-password"
+              />
+              {/* Show and hide password */}
+              <span id="show-password" onClick={handleShowPassword}>Show</span>
+            </div>
             <button
-              className="w-[70%] m-auto h-[2rem]  rounded-[999px] border-2 text-blue-500"
+              className="w-[70%] m-auto h-[3rem]   rounded-[999px] border-2 text-blue-500 hover:bg-gray-400 transition-color duration-150 hover:text-black hover:font-bold"
               onClick={handleLogin}
             >
               Sign in

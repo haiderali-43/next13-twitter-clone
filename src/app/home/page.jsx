@@ -19,6 +19,13 @@ const Page = () => {
       <Feed />
       <Feed />
       <Feed />
+      <Feed />
+      <Feed />
+      <Feed />
+      <Feed />
+      <Feed />
+      <Feed />
+      <Feed />
     </div>
   );
 };

@@ -30,6 +30,17 @@ export default function Home() {
         console.log(errorCode, errorMessage);
       });
   };
+  const handleShowPassword = () => {
+    const showPassword = document.getElementById("show-password");
+    const userPassword = document.getElementById("user-password");
+    if (userPassword.type == "password") {
+      userPassword.type = "text";
+      showPassword.innerHTML = "Hide";
+    } else {
+      userPassword.type = "password";
+      showPassword.innerHTML = "Show";
+    }
+  };
   return (
     <main
       className="md:w-[500px] md:h-[600px] w-[400px] h-[550px] rounded-lg bg-white/75  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] p-3"
@@ -66,20 +77,26 @@ export default function Home() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <div>
-              <input
-                type="password"
-                placeholder="Enter your password"
-                className="w-[70%] m-auto h-[2rem] px-2 py-6 rounded-lg border-2 focus:outline-none"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                id="user-password"
-              />
-              {/* Show and hide password */}
-              <span id="show-password" onClick={handleShowPassword}>Show</span>
-            </div>
+
+            <input
+              type="password"
+              placeholder="Enter your password"
+              className="w-[70%] m-auto h-[2rem] px-2 py-6 rounded-lg border-2 focus:outline-none"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              id="user-password"
+            />
+            {/* Show and hide password */}
+            <span
+              id="show-password"
+              onClick={handleShowPassword}
+              className="absolute right-[6rem] top-[20rem] cursor-pointer"
+            >
+              Show
+            </span>
+
             <button
-              className="w-[70%] m-auto h-[3rem]   rounded-[999px] border-2 text-blue-500 hover:bg-gray-400 transition-color duration-150 hover:text-black hover:font-bold"
+              className="w-[70%] m-auto h-[3rem]   rounded-[999px] border-2 text-blue-500 hover:bg-gray-400 transition-all duration-300 hover:text-black hover:font-bold"
               onClick={handleLogin}
             >
               Sign in

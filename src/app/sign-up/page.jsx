@@ -44,6 +44,18 @@ export default function Home() {
       console.log(errorCode, errorMessage);
     }
   };
+  // show and Hide Password
+  const handleShowPassword = () => {
+    const showPassword = document.getElementById("show-password");
+    const userPassword = document.getElementById("user-password");
+    if (userPassword.type == "password") {
+      userPassword.type = "text";
+      showPassword.innerHTML = "Hide";
+    } else {
+      userPassword.type = "password";
+      showPassword.innerHTML = "Show";
+    }
+  };
 
   return (
     <main
@@ -93,9 +105,17 @@ export default function Home() {
               className="w-[70%] m-auto h-[2rem] px-2 py-6 rounded-lg border-2 focus:outline-none"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              id="user-password"
             />
+            <span
+              id="show-password"
+              onClick={handleShowPassword}
+              className="absolute right-[6rem] top-[24.5rem] cursor-pointer"
+            >
+              Show
+            </span>
             <button
-              className="w-[70%] m-auto h-[2rem]  rounded-[999px] border-2 text-blue-500"
+              className="w-[70%] m-auto h-[3rem] hover:bg-gray-300 hover:text-black hover:font-extrabold  rounded-[999px] border-2 text-blue-500 transition-all duration-300"
               onClick={handleSubmit}
             >
               Sign up

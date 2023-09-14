@@ -1,4 +1,5 @@
 // Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -7,16 +8,15 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDCGzrZ-8EToesWw7jC3qpFID4_xxLMuKk",
-  authDomain: "next-js-twitter-clone-25f8f.firebaseapp.com",
-  projectId: "next-js-twitter-clone-25f8f",
-  storageBucket: "next-js-twitter-clone-25f8f.appspot.com",
-  messagingSenderId: "200164780561",
-  appId: "1:200164780561:web:092e7cf9f550882df4dfb0",
+  apiKey: " AIzaSyD747GDHNPisPoSmhdasfmCHP9BjyoXnxA",
+  authDomain: "twitter-clone-1cd04.firebaseapp.com",
+  projectId: "twitter-clone-1cd04",
+  storageBucket: "twitter-clone-1cd04.appspot.com",
+  messagingSenderId: "51184611736",
+  appId: "1:51184611736:web:7daac14c2a8a8b11cfbbed",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-
 export const db = getFirestore(app);

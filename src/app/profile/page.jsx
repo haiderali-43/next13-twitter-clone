@@ -24,14 +24,14 @@ const Page = () => {
         />
       </div>
       {/* Profile Image */}
-      <div className="rounded-full bg-blue-700 w-[200px] h-[200px]  text-[52px] flex items-center justify-center absolute top-[49%] left-[2rem] drop-shadow-lg">
+      <div className="rounded-full bg-blue-700 w-[200px] h-[200px]  text-[52px] flex items-center justify-center drop-shadow-lg -mt-[4rem] ml-7">
         H
       </div>
       {/* Edit Profile Button */}
       <div>
-        <Link href={'/editprofile'}  className="absolute right-[4rem] mt-4 border-2 rounded-[999px] p-2 hover:bg-[#e7e7e8] cursor-pointer transition-all duration-200" >Edit Profile</Link>
+        <Link href={'/editprofile'}  className="absolute bottom-7 right-[4rem] border-2 rounded-[999px] p-2 hover:bg-[#e7e7e8] cursor-pointer transition-all duration-200" >Edit Profile</Link>
       </div>
-      <div className="relative top-[7rem] left-[2rem] space-y-2">
+      <div className="">
         <div>
           <div className="font-extrabold text-[20px]">Hassan Hussaian</div>
           <div className="font-extralight text-gray-400">@hassanhussaian</div>

@@ -12,7 +12,7 @@ const Feed = () => {
         {/* Avatar */}
         <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
           <Image
-            src={'/logo.png'}
+            src={"/logo.png"}
             alt="Avatar"
             width={40}
             height={40}
@@ -32,11 +32,18 @@ const Feed = () => {
       <p className="mt-4 text-lg">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
         interdum justo eu ligula tristique, at cursus odio rhoncus. Sed
-        venenatis tristique ante a eleifend. Nulla facilisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, voluptates!
+        venenatis tristique ante a eleifend. Nulla facilisi. Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Repudiandae, voluptates!
       </p>
       {/* Image */}
       <div className="mt-4">
-        <Image src="/tweet.jpg" alt="Tweet img" width={500} height={400}  />
+        <Image
+          src="/tweet.jpg"
+          alt="Tweet img"
+          width={500}
+          height={400}
+          className="w-auto h-auto"
+        />
       </div>
       {/* Like, comment, retweet, and analytics */}
       <div className="flex mt-4 text-gray-500">

@@ -23,27 +23,28 @@ export default function Home() {
         password
       );
       const user = userCredential.user;
-      console.log(user);
-      router.push("/");
 
-      // Save user information in Firestore
+      // Send email verification
+
+      // Save user information in Firestore (excluding password)
       const userData = {
         name: name,
         email: email,
         username: userName,
-        password: password, // Use the correct variable name
-        // Do not store passwords in Firestore for security reasons.
-        // You should only store a hashed or encrypted version of the password if needed.
+        password: password,
       };
 
-      const docRef = await db.collection("users").add(userData);
+      const docRef = await db.collection("users").doc(user.uid).set(userData);
       console.log("User data added with id:", docRef.id);
+
+      router.push("/");
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
+      console.error(errorCode, errorMessage);
     }
   };
+
   // show and Hide Password
   const handleShowPassword = () => {
     const showPassword = document.getElementById("show-password");

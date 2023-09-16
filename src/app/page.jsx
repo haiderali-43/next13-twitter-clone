@@ -2,39 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { auth } from "../../firebaseConfig";
 import { useState } from "react";
-import {
-  signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
-  
-} from "firebase/auth";
-
-export const DisplayName = () => {
-  const name = user.DisplayName;
-  console.log(name);
-};
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    await signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        router.push("/home");
-        console.log(user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
-  };
   const handleShowPassword = () => {
     const showPassword = document.getElementById("show-password");
     const userPassword = document.getElementById("user-password");
@@ -46,29 +20,7 @@ export default function Home() {
       showPassword.innerHTML = "Show";
     }
   };
-  const handleGoogleAuth = () => {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        // The signed-in user info.
-        const user = result.user;
-        // IdP data available using getAdditionalUserInfo(result)
-        // ...
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
-      });
-  };
+
   return (
     <main
       className="md:w-[500px] md:h-[600px] w-[400px] h-[550px] rounded-lg bg-white/75  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] p-3"
@@ -92,7 +44,6 @@ export default function Home() {
             {/* Sign in with Google */}
             <div
               className="flex justify-center w-[70%] m-auto space-x-2 p-2 rounded-[999px] bg-slate-200 cursor-pointer"
-              onClick={handleGoogleAuth}
             >
               <Image src={"/google.png"} alt="Google" width={32} height={32} />
               <p className="mt-1 font-bold">Continue with Google</p>
@@ -128,7 +79,7 @@ export default function Home() {
 
             <button
               className="w-[70%] m-auto h-[3rem]   rounded-[999px] border-2 text-blue-500 hover:bg-gray-400 transition-all duration-300 hover:text-black hover:font-bold"
-              onClick={handleLogin}
+             
             >
               Sign in
             </button>

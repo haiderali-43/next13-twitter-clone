@@ -5,8 +5,6 @@ import Feed from "@/components/Feed";
 import Link from "next/link";
 
 const Page = () => {
-  
-
   return (
     <div className="sm:w-[50%] w-[80%] absolute right-0 sm:relative  sm:m-auto md:border-r-2  h-[100vh] p-2">
       <div>
@@ -29,15 +27,20 @@ const Page = () => {
       </div>
       {/* Edit Profile Button */}
       <div>
-        <Link href={'/editprofile'}  className="absolute bottom-7 right-[4rem] border-2 rounded-[999px] p-2 hover:bg-[#e7e7e8] cursor-pointer transition-all duration-200" >Edit Profile</Link>
+        <Link
+          href={"/editprofile"}
+          className="absolute bottom-[9rem] right-[4rem] border-2 rounded-[999px] p-2 hover:bg-[#e7e7e8] cursor-pointer transition-all duration-200"
+        >
+          Edit Profile
+        </Link>
       </div>
-      <div className="">
-        <div>
+      <div className="mt-8 p-2">
+        <div className="ml-8">
           <div className="font-extrabold text-[20px]">Hassan Hussaian</div>
           <div className="font-extralight text-gray-400">@hassanhussaian</div>
         </div>
         {/* Bio */}
-        <div>
+        <div className="mt-4">
           <p>
             I am Haider Ali. Currently I have qualification of inter but in
             future inshallah i will be Data Scientist. I am also building next
@@ -55,7 +58,7 @@ const Page = () => {
         </div>
       </div>
       {/* Posts */}
-      <div className="mt-[9rem] border-t-2">
+      <div className="mt-[3rem] border-t-2">
         <h4 className="ml-7 text-[20px] font-extralight">Posts</h4>
         <Feed />
         <Feed />

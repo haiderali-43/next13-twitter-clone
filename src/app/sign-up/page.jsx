@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { auth } from "../../../firebaseConfig";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { db } from "../../../firebaseConfig";
+
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -13,37 +12,6 @@ export default function Home() {
   const [name, setName] = useState("");
   const [userName, setUserName] = useState("");
   const router = useRouter();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const user = userCredential.user;
-
-      // Send email verification
-
-      // Save user information in Firestore (excluding password)
-      const userData = {
-        name: name,
-        email: email,
-        username: userName,
-        password: password,
-      };
-
-      const docRef = await db.collection("users").doc(user.uid).set(userData);
-      console.log("User data added with id:", docRef.id);
-
-      router.push("/");
-    } catch (error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error(errorCode, errorMessage);
-    }
-  };
 
   // show and Hide Password
   const handleShowPassword = () => {
@@ -110,15 +78,11 @@ export default function Home() {
             />
             <span
               id="show-password"
-              onClick={handleShowPassword}
               className="absolute right-[6rem] top-[24.5rem] cursor-pointer"
             >
               Show
             </span>
-            <button
-              className="w-[70%] m-auto h-[3rem] hover:bg-gray-300 hover:text-black hover:font-extrabold  rounded-[999px] border-2 text-blue-500 transition-all duration-300"
-              onClick={handleSubmit}
-            >
+            <button className="w-[70%] m-auto h-[3rem] hover:bg-gray-300 hover:text-black hover:font-extrabold  rounded-[999px] border-2 text-blue-500 transition-all duration-300">
               Sign up
             </button>
           </div>

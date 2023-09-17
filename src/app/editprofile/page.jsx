@@ -1,14 +1,16 @@
-"use client"
+"use client";
+import Image from "next/image";
 // components/EditProfile.js
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { AiOutlineCloudUpload } from "react-icons/ai";
 
 const EditProfile = () => {
   const [profileData, setProfileData] = useState({
-    displayName: '',
-    bio: '',
-    website: '',
-    location: '',
-    birthdate: '',
+    displayName: "",
+    bio: "",
+    website: "",
+    location: "",
+    birthdate: "",
   });
 
   const handleInputChange = (e) => {
@@ -21,16 +23,25 @@ const EditProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Profile data submitted:', profileData);
-    // Implement logic to update the user's profile data on your backend.
+    console.log("Profile data submitted:", profileData);
   };
 
   return (
     <div className="sm:w-[50%] w-[80%] absolute right-0 sm:relative  sm:m-auto md:border-r-2  h-[100vh] p-2">
       <h1 className="text-2xl font-bold mb-4">Edit Profile</h1>
-      <form className="w-full max-w-md" onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block text-gray-600 font-semibold mb-2">Display Name</label>
+      <form className="w-auto" onSubmit={handleSubmit}>
+        {/* Cover Image */}
+        <div className="w-full h-[300px] bg-gray-400 flex items-center justify-center text-[40px] rounded-sm">
+         <AiOutlineCloudUpload/> 
+        </div>
+        {/* Profile Photo */}
+        <div className="rounded-full  w-[200px] h-[200px]  bg-gray-400 text-[52px] flex items-center justify-center drop-shadow-lg -mt-[4rem] ml-4 border-t-white border-t-4 ">
+          <AiOutlineCloudUpload />
+        </div>
+        <div className="mb-4 mt-[3rem]">
+          <label className="block text-gray-600 font-semibold mb-2">
+            Display Name
+          </label>
           <input
             type="text"
             name="displayName"
@@ -52,7 +63,9 @@ const EditProfile = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-600 font-semibold mb-2">Website</label>
+          <label className="block text-gray-600 font-semibold mb-2">
+            Website
+          </label>
           <input
             type="text"
             name="website"
@@ -62,7 +75,9 @@ const EditProfile = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-600 font-semibold mb-2">Location</label>
+          <label className="block text-gray-600 font-semibold mb-2">
+            Location
+          </label>
           <input
             type="text"
             name="location"
@@ -72,7 +87,9 @@ const EditProfile = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-600 font-semibold mb-2">Birthdate</label>
+          <label className="block text-gray-600 font-semibold mb-2">
+            Birthdate
+          </label>
           <input
             type="date"
             name="birthdate"
@@ -83,7 +100,7 @@ const EditProfile = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none"
+          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none mb-3"
         >
           Save
         </button>

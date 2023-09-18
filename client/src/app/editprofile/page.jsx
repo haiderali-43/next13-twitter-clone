@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 
-const EditProfile = () => {
+const Page = () => {
   const [profileData, setProfileData] = useState({
     displayName: "",
     bio: "",
@@ -109,4 +109,4 @@ const EditProfile = () => {
   );
 };
 
-export default EditProfile;
+export default Page;

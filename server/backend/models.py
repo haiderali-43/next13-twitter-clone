@@ -9,6 +9,7 @@ class UserProfile(models.Model):
     location = models.CharField(max_length=200, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
     profile_photo = models.ImageField(upload_to='profile_photos/', blank=True)
+    cover_photo = models.ImageField(upload_to='cover_photos/', blank=True)
 
 
 class Tweet(models.Model):

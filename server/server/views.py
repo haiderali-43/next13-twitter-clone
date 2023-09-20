@@ -1,6 +1,3 @@
-
-
-# Create your views here.
 from django_nextjs.render import render_nextjs_page
 from django.shortcuts import render
 

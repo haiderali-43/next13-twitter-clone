@@ -58,6 +58,7 @@ export default function Home() {
               className="w-[70%] m-auto h-[2rem] px-2 py-6 rounded-lg border-2 focus:outline-none"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              name="login-email"
             />
 
             <input
@@ -67,6 +68,7 @@ export default function Home() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               id="user-password"
+              name="login-password"
             />
             {/* Show and hide password */}
             <span

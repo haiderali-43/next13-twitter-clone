@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-
 export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -53,6 +52,7 @@ export default function Home() {
               className="w-[70%] m-auto h-[2rem] px-2 py-6 rounded-lg border-2 focus:outline-none"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              name="signup-name"
             />
             <input
               type="text"
@@ -60,6 +60,7 @@ export default function Home() {
               className="w-[70%] m-auto h-[2rem] px-2 py-6 rounded-lg border-2 focus:outline-none"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
+              name="signup-username"
             />
             <input
               type="email"
@@ -67,6 +68,7 @@ export default function Home() {
               className="w-[70%] m-auto h-[2rem] px-2 py-6 rounded-lg border-2 focus:outline-none"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              name="signup-email"
             />
             <input
               type="password"
@@ -75,6 +77,7 @@ export default function Home() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               id="user-password"
+              name="signup-password"
             />
             <span
               id="show-password"
